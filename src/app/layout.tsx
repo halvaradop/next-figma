@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google"
 import { LayoutProps } from "@/lib/@types/props";
+import "@/ui/globals.css"
 
 export const metadata: Metadata = {
     title: "Figma Online",
@@ -33,7 +34,7 @@ const workSans = Work_Sans({
 export default function RootLayout({ children }: LayoutProps) {
     return (
         <html lang="en">
-            <body className={`${workSans.style} antialiased`}>
+            <body className={`${workSans.className} antialiased`}>
                 {children}
             </body>
         </html>

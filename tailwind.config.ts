@@ -4,7 +4,7 @@ import pluginFlow from "@halvaradop/tailwindcss-flow"
 const config: Config = {
     content: [
         "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-        "./src/src/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/ui/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     darkMode: "class",
@@ -39,7 +39,7 @@ const config: Config = {
         },
     },
     plugins: [
-        pluginFlow
+        pluginFlow  
     ],
 };
 export default config;

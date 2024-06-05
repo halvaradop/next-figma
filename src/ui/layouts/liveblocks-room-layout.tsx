@@ -7,7 +7,7 @@ import { RoomProvider } from "@/root/liveblocks.config"
 export const RoomLayout = ({ children }: LayoutProps) => {
 
     return (
-        <RoomProvider id="room" initialPresence={{  }}>
+        <RoomProvider id="room" initialPresence={{ cursor: null, message: null }}>
             <ClientSideSuspense fallback={<div>Loading...s</div>}>
                 {() => children}
             </ClientSideSuspense>
