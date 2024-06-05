@@ -1,11 +1,15 @@
-import { LayoutProps } from "@/lib/@types/props"
+import { DesignLayoutProps } from "@/lib/@types/props"
 import { RoomLayout } from "@/ui/layouts/liveblocks-room-layout"
 
-export const DesignLayout = ({ children }: LayoutProps) => {
+
+const DesignLayout = ({ children, live }: DesignLayoutProps) => {
 
     return (
         <RoomLayout>
             {children}
+            {live}
         </RoomLayout>
     )
 }
+
+export default DesignLayout

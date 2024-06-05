@@ -3,7 +3,7 @@ export const DesignPage = () => {
 
 
     return (
-        <section>
+        <section className="text-primary-green">
             
         </section>
     )
