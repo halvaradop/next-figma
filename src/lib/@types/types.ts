@@ -26,3 +26,13 @@ export type CursorState =
         }
 
 export type ArgsFunction = (...args: any) => void
+
+export interface Reaction {
+    value: string,
+    timestamp: number,
+    point: Cursor
+}
+
+export interface ReactionEvent extends Cursor {
+    value: string
+}

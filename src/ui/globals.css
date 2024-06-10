@@ -8,3 +8,104 @@
         outline: none;
     }
 }
+
+@layer utilities {
+
+    .animate-y-0 {
+        opacity: 0;
+        animation: animationY0 2s, fadeOut 2s;
+    }
+
+    .animate-y-1 {
+        opacity: 0;
+        animation: animationY1 2s, fadeOut 2s;
+    }
+
+    .animate-y-2 {
+        opacity: 0;
+        animation: animationY2 2s, fadeOut 2s;
+    }
+
+    .animate-x-0 {
+        animation: animationX0 0.3s alternate infinite ease-in-out;
+    }
+
+    .animate-x-1 {
+        animation: animationX1 0.3s alternate infinite ease-in-out;
+    }
+
+    .animate-x-2 {
+        animation: animationX2 0.3s alternate infinite ease-in-out;
+    }
+}
+
+
+@keyframes animationY0 {
+    from {
+        transform: translate(0px, 0px);
+    }
+
+    to {
+        transform: translate(0px, -400px);
+    }
+}
+
+@keyframes animationY1 {
+    from {
+        transform: translate(0px, 0px);
+    }
+
+    to {
+        transform: translate(0px, -300px);
+    }
+}
+
+@keyframes animationY2 {
+    from {
+        transform: translate(0px, 0px);
+    }
+
+    to {
+        transform: translate(0px, -200px);
+    }
+}
+
+@keyframes animationX0 {
+    from {
+        transform: translate(0px, 0px);
+    }
+
+    to {
+        transform: translate(50px, 0px);
+    }
+}
+
+@keyframes animationX1 {
+    from {
+        transform: translate(0px, 0px);
+    }
+
+    to {
+        transform: translate(100px, 0px);
+    }
+}
+
+@keyframes animationX1 {
+    from {
+        transform: translate(0px, 0px);
+    }
+
+    to {
+        transform: translate(-50px, 0px);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
