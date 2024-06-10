@@ -56,29 +56,6 @@ const Live = () => {
     }, [cursorState.mode, setCursorState])
 
 
-    const handleKeyUp = (event: KeyboardEvent) => {
-        if(event.key === "/") {
-            setCursorState({
-                mode: CursorMode.CHAT,
-                previousMessage: null,
-                message: ""
-            })
-        } else if(event.key === "Escape") {
-            updateMyPresence({ message: "" })
-            setCursorState({ mode: CursorMode.HIDDEN })
-        } else if(event.key === "e") {
-            setCursorState({ mode: CursorMode.REACTION_SELECTOR })
-        }
-    } 
-
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-        if(event.key === "/") {
-            event.preventDefault()
-        }
-    }
-
-
     const handlePointerUp = useCallback(() => {
         setCursorState(previousState => previousState.mode === CursorMode.REACTION ? {
             ...previousState,
@@ -135,6 +112,27 @@ const Live = () => {
 
 
     useEffect(() => {
+        const handleKeyUp = (event: KeyboardEvent) => {
+            if(event.key === "/") {
+                setCursorState({
+                    mode: CursorMode.CHAT,
+                    previousMessage: null,
+                    message: ""
+                })
+            } else if(event.key === "Escape") {
+                updateMyPresence({ message: "" })
+                setCursorState({ mode: CursorMode.HIDDEN })
+            } else if(event.key === "e") {
+                setCursorState({ mode: CursorMode.REACTION_SELECTOR })
+            }
+        }
+
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if(event.key === "/") {
+                event.preventDefault()
+            }
+        }
+
         window.addEventListener("keyup", handleKeyUp)
         window.addEventListener("keydown", handleKeyDown)
 
